@@ -180,7 +180,7 @@ def main():
     print(f"共解析 {len(all_access_records)} 条访问记录")
 
     # 按时间范围过滤
-    print(f"正在过滤 {args.start_time} 到 {args.end_time} 的记录...")
+    print(f"正在过滤 {START_TIME} 到 {END_TIME} 的记录...")
     filtered_records = filter_by_time_range(all_access_records, start_time, end_time)
     print(f"过滤后有 {len(filtered_records)} 条记录")
 
