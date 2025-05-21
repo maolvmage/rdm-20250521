@@ -5,23 +5,19 @@
 nginx日志分析工具
 
 该脚本用于分析nginx访问日志，统计不同员工在指定时间段内的访问次数。
-使用方法：
-    python nginx_log_analyzer.py --log_dir "logs_directory" --start_time "YYYY-MM-DD HH:MM:SS" --end_time "YYYY-MM-DD HH:MM:SS" --output "output.xlsx"
-
-参数说明：
-    --log_dir: 日志文件目录路径，将处理该目录下的所有日志文件
-    --start_time: 开始时间，格式为 "YYYY-MM-DD HH:MM:SS"
-    --end_time: 结束时间，格式为 "YYYY-MM-DD HH:MM:SS"
-    --output: 输出Excel文件名，默认为 "员工访问统计.xlsx"
-    --employee_file: 员工信息文件路径，默认为 "rdm/IP信息.xlsx"
 """
 
 import re
 import os
-import argparse
 from datetime import datetime
 import pandas as pd
 
+# 固定配置
+LOG_DIR = os.path.join(os.path.dirname(__file__), 'logs')  # 日志目录
+OUTPUT_FILE = os.path.join(os.path.dirname(__file__), '员工访问统计.xlsx')  # 输出文件
+EMPLOYEE_FILE = os.path.join(os.path.dirname(__file__), 'IP信息.xlsx')  # 员工信息文件
+START_TIME = '2025-05-01 00:00:00'  # 开始时间
+END_TIME = '2025-05-31 23:59:59'  # 结束时间
 
 def parse_nginx_log(log_file):
     """
@@ -131,54 +127,40 @@ def count_access_by_employee(records, employee_info):
 
 
 def main():
-    # 解析命令行参数
-    parser = argparse.ArgumentParser(description='nginx日志分析工具')
-    parser.add_argument('--log_dir', type=str, required=True, help='日志文件目录路径，将处理该目录下的所有日志文件')
-    parser.add_argument('--start_time', type=str, required=True, help='开始时间，格式为 YYYY-MM-DD HH:MM:SS')
-    parser.add_argument('--end_time', type=str, required=True, help='结束时间，格式为 YYYY-MM-DD HH:MM:SS')
-    parser.add_argument('--output', type=str, default='员工访问统计.xlsx', help='输出Excel文件名')
-    parser.add_argument('--employee_file', type=str, default='rdm/nginx-data-analysis/IP信息.xlsx', help='员工信息文件路径')
-
-    args = parser.parse_args()
-
     # 将输入的时间字符串转换为datetime对象
     try:
-        start_time = datetime.strptime(args.start_time, '%Y-%m-%d %H:%M:%S').replace(tzinfo=datetime.now().astimezone().tzinfo)
-        end_time = datetime.strptime(args.end_time, '%Y-%m-%d %H:%M:%S').replace(tzinfo=datetime.now().astimezone().tzinfo)
+        start_time = datetime.strptime(START_TIME, '%Y-%m-%d %H:%M:%S').replace(tzinfo=datetime.now().astimezone().tzinfo)
+        end_time = datetime.strptime(END_TIME, '%Y-%m-%d %H:%M:%S').replace(tzinfo=datetime.now().astimezone().tzinfo)
     except ValueError:
         print("错误: 时间格式不正确，请使用 YYYY-MM-DD HH:MM:SS 格式")
         return
 
-    # 获取日志目录
-    log_dir = args.log_dir
-    employee_file = args.employee_file
-
     # 检查日志目录是否存在
-    if not os.path.exists(log_dir) or not os.path.isdir(log_dir):
-        print(f"错误: 找不到日志目录 {log_dir} 或者它不是一个目录")
+    if not os.path.exists(LOG_DIR) or not os.path.isdir(LOG_DIR):
+        print(f"错误: 找不到日志目录 {LOG_DIR} 或者它不是一个目录")
         return
 
     # 检查员工信息文件是否存在
-    if not os.path.exists(employee_file):
-        print(f"错误: 找不到员工信息文件 {employee_file}")
+    if not os.path.exists(EMPLOYEE_FILE):
+        print(f"错误: 找不到员工信息文件 {EMPLOYEE_FILE}")
         return
 
     # 读取员工信息
     try:
-        employee_info = pd.read_excel(employee_file)
+        employee_info = pd.read_excel(EMPLOYEE_FILE)
     except Exception as e:
         print(f"读取员工信息文件时出错: {e}")
         return
 
     # 获取目录中的所有文件
     log_files = []
-    for file in os.listdir(log_dir):
-        file_path = os.path.join(log_dir, file)
+    for file in os.listdir(LOG_DIR):
+        file_path = os.path.join(LOG_DIR, file)
         if os.path.isfile(file_path):
             log_files.append(file_path)
 
     if not log_files:
-        print(f"警告: 目录 {log_dir} 中没有找到任何文件")
+        print(f"警告: 目录 {LOG_DIR} 中没有找到任何文件")
         return
 
     # 解析所有nginx日志
@@ -208,8 +190,8 @@ def main():
 
     # 保存结果到Excel文件
     try:
-        result_df.to_excel(args.output, index=False)
-        print(f"结果已保存到 {args.output}")
+        result_df.to_excel(OUTPUT_FILE, index=False)
+        print(f"结果已保存到 {OUTPUT_FILE}")
     except Exception as e:
         print(f"保存结果时出错: {e}")
 
