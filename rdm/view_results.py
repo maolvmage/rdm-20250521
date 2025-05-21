@@ -1,1 +1,14 @@
-# 结果查看代码
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+查看员工访问统计结果
+"""
+
+import pandas as pd
+
+# 读取结果文件
+df = pd.read_excel('员工访问统计.xlsx')
+
+# 打印结果
+print(df)

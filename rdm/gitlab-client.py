@@ -21,6 +21,7 @@ def get_code_changes(project_id, branch):
         stats['additions'] += commit_details.stats['additions']
         stats['deletions'] += commit_details.stats['deletions']
         
+        # 获取 commit 的 diff 信息
         diffs = commit_details.diff()
         for diff in diffs:
             if diff['new_path'].endswith('.py'):
@@ -31,10 +32,13 @@ def get_code_changes(project_id, branch):
     return stats
 
 def extract_modified_functions(diff_text):
+    """
+    解析 diff 文本，提取修改的 Python 函数
+    """
     modified_functions = set()
     diff_lines = diff_text.split('\n')
     
-    function_pattern = re.compile(r'^[+-]\s*def\s+(\w+)\(')
+    function_pattern = re.compile(r'^[+-]\s*def\s+(\w+)\(')  # 匹配 Python 函数定义
     for line in diff_lines:
         match = function_pattern.match(line)
         if match:
@@ -50,4 +54,8 @@ if __name__ == '__main__':
         all_code_changes[(project_id, branch)] = code_changes
         print(f"新增代码行数: {code_changes['additions']}")
         print(f"删除代码行数: {code_changes['deletions']}")
+        # print(f"修改代码行数: {code_changes['modifications']}")
+        # print("修改的函数:")
+        # for file, functions in code_changes['modified_functions'].items():
+        #     print(f"{file}: {functions}")
         print("-----------------------------------")
