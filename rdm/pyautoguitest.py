@@ -14,7 +14,7 @@ try:
         
         # 计时器（精确等待剩余时间）
         start_time = time.time()
-        while time.time() - start_time < 120:  # 总间隔1分钟
+        while time.time() - start_time < 60:  # 总间隔1分钟
             time.sleep(10)  # 每10秒检测一次
 except KeyboardInterrupt:
     print("\n脚本已通过 Ctrl+C 终止")
