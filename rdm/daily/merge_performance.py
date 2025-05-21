@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # 定义Excel文件夹路径
-excel_folder = r"e:\workspace\python\rdm\rdm\excel"
+excel_folder = r"E:\workspace\python\rdm-202505\rdm-20250521\rdm\daily\excel"
 
 # 从员工信息.xlsx中读取姓名和工号，并保留原始顺序
 employee_info = pd.read_excel(os.path.join(excel_folder, '员工信息.xlsx'))
@@ -80,7 +80,7 @@ result = result.merge(overtime_summary, on='姓名', how='left')
 result = result[result[performance_levels].sum(axis=1) > 0]
 
 # 将结果保存到新的Excel文件
-output_file = r"e:\workspace\python\rdm\rdm\excel\绩效汇总结果.xlsx"
+output_file = r"E:\workspace\python\rdm-202505\rdm-20250521\rdm\daily\excel\绩效汇总结果.xlsx"
 result.to_excel(output_file, index=False)
 
 print(f"数据已成功汇总并保存到: {output_file}")

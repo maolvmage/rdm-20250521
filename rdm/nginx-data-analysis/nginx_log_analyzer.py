@@ -137,7 +137,7 @@ def main():
     parser.add_argument('--start_time', type=str, required=True, help='开始时间，格式为 YYYY-MM-DD HH:MM:SS')
     parser.add_argument('--end_time', type=str, required=True, help='结束时间，格式为 YYYY-MM-DD HH:MM:SS')
     parser.add_argument('--output', type=str, default='员工访问统计.xlsx', help='输出Excel文件名')
-    parser.add_argument('--employee_file', type=str, default='rdm/IP信息.xlsx', help='员工信息文件路径')
+    parser.add_argument('--employee_file', type=str, default='rdm/nginx-data-analysis/IP信息.xlsx', help='员工信息文件路径')
 
     args = parser.parse_args()
 
