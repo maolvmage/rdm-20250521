@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品角色权限清单 - 菜单结构</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .menu-container {
+            margin-top: 20px;
+        }
+        .level1 {
+            background-color: #f5f5f5;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #4285f4;
+            font-weight: bold;
+        }
+        .level2 {
+            background-color: #f9f9f9;
+            padding: 8px 8px 8px 20px;
+            margin: 3px 0 3px 10px;
+            border-left: 3px solid #34a853;
+        }
+        .level3 {
+            padding: 6px 6px 6px 30px;
+            margin: 2px 0 2px 20px;
+            border-left: 2px solid #ea4335;
+        }
+        .description {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 10px;
+            font-style: italic;
+        }
+        .roles {
+            float: right;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h1>产品角色权限清单 - 菜单结构</h1>
+    
+    <div class="menu-container">
+        <div class="level1">首页
+            <div class="description">产品提供各种态势数据大屏首页展示</div>
+            <div class="roles">角色: 所有角色</div>
+            <div class="clear"></div>
+            
+            <div class="level2">首页
+                <div class="description">产品提供各种态势数据大屏首页展示</div>
+            </div>
+        </div>
+        
+        <div class="level1">报表中心
+            <div class="roles">角色: 所有角色</div>
+            <div class="clear"></div>
+            
+            <div class="level2">管理驾驶舱
+                <div class="level3">仪表盘
+                    <div class="description">依据用户业务需求，展示用户关注的统计报表及审计列表信息，支持用户快速浏览不同维度统计结果，以便掌握不同场景下的资产及业务的运行安全状况。</div>
+                </div>
+            </div>
+            
+            <div class="level2">报表自定义
+                <div class="description">支持用户根据实际情况个性化定义符合管理需求的相关报表。</div>
+            </div>
+            
+            <div class="level2">智能报告模板
+                <div class="description">产品提供智能报告的增、删、改、查、启用、停止、报告下载、报告预览等功能</div>
+            </div>
+            
+            <div class="level2">报告模板管理
+                <div class="description">产品提供报告模板的增、删、改、查、报告预览等功能</div>
+            </div>
+            
+            <div class="level2">系统首页配置
+                <div class="description">产品提供首页的增、删、改、查、启用等功能</div>
+            </div>
+        </div>
+        
+        <div class="level1">导出任务审计
+            <div class="roles">角色: 安全审计管理员, 安全保密管理员</div>
+            <div class="clear"></div>
+            
+            <div class="level2">导出任务审计
+                <div class="description">产品提供将各业务产品异步导出的文件统一进行审计、下载及管理等功能</div>
+            </div>
+        </div>
+        
+        <div class="level1">DLP业务告警
+            <div class="roles">角色: 终端DLP, 网络DLP, 存储DLP</div>
+            <div class="clear"></div>
+            
+            <div class="level2">终端业务告警
+                <div class="description">终端上告警行为的审计管理</div>
+            </div>
+        </div>
+        
+        <div class="level1">跨网统计分析
+            <div class="roles">角色: 安全集中监控与审计系统</div>
+            <div class="clear"></div>
+            
+            <div class="level2">流量统计分析
+                <div class="description">查询、下钻、下钻-搜索、基础数据统计</div>
+            </div>
+            
+            <div class="level2">存储统计分析
+                <div class="description">查询、下钻、下钻-搜索、基础数据统计</div>
+            </div>
+            
+            <div class="level2">用户协作统计分析
+                <div class="description">查询、下钻、下钻-搜索、基础数据统计</div>
+            </div>
+            
+            <div class="level2">敏感文件分析
+                <div class="description">查询、下钻、下钻-搜索、基础数据统计</div>
+            </div>
+            
+            <div class="level2">周期报告管理
+                <div class="description">增、删、改、启用、停用、刷新、密度设置、列设置、重置、搜索</div>
+            </div>
+        </div>
+        
+        <div class="level1">DLP数据审计
+            <div class="roles">角色: 终端DLP, 网络DLP, 存储DLP</div>
+            <div class="clear"></div>
+            
+            <div class="level2">终端行为审计
+                <div class="description">与自研终端DLP产品对接，支持用户对终端行为日志进行审计，同时支持用户对日志内容进行标签设置，如用户标签、时间标签、邮箱标签、自定义标签等。支持审计日志的导出。</div>
+            </div>
+            
+            <div class="level2">邮件行为审计
+                <div class="description">与邮件DLP产品对接，对邮件行为进行审计，支持用户标签、时间标签、邮件标签、邮箱白名单等标签的个性化设置，支持审计日志的导出。</div>
+            </div>
+            
+            <div class="level2">网页行为审计
+                <div class="description">与网络DLP产品进行对接，对用户的网络行为日志进行审计分析，支持用户标签、时间标签、邮件标签、邮箱白名单等标签的个性化设置，支持审计日志的导出。</div>
+            </div>
+            
+            <div class="level2">流量行为审计
+                <div class="description">与流量DLP产品进行对接，对流量行为日志进行审计分析，支持持用户标签、时间标签、邮件标签、邮箱白名单等标签的个性化设置，支持审计日志的导出。</div>
+            </div>
+            
+            <div class="level2">邮件归档审计
+                <div class="description">对邮件进行归档，并支持对归档邮件进行审计和查询</div>
+            </div>
+            
+            <div class="level2">邮件回溯审计
+                <div class="description">对归档邮件进行回溯分析</div>
+            </div>
+            
+            <div class="level2">终端行为报表
+                <div class="description">从不同维度对终端行为日志进行分析</div>
+            </div>
+            
+            <div class="level2">邮件行为报表
+                <div class="description">从不同维度对邮件行为日志进行分析</div>
+            </div>
+            
+            <div class="level2">网页行为报表
+                <div class="description">从不同维度对网络行为日志进行分析</div>
+            </div>
+            
+            <div class="level2">流量行为报表
+                <div class="description">从不同维度对流量行为日志进行分析</div>
+            </div>
+            
+            <div class="level2">敏感内容确认
+                <div class="description">手工下载日志信息，并支持用户对导出日志调整标签后再通过xsl/xlsx上传至系统。</div>
+            </div>
+            
+            <div class="level2">通知模版管理
+                <div class="description">针对NDLP产品的邮件行为配置通知策略，通知方式支持"邮件通知、系统通知、企业微信通知"，并支持用户根据业务管理需求设置通知对象、通知模板、通知数据以及白名单信息。</div>
+            </div>
+            
+            <div class="level2">导出模板管理
+                <div class="description">对终端行为日志、邮件/网络行为日志的导出字段进行设置，设置后导出信息可按照设置字段进行导出</div>
+            </div>
+            
+            <div class="level2">证据文件审计
+                <div class="description">终端上所有行为关联附件的审计能力</div>
+            </div>
+        </div>
+        
+        <div class="level1">DLP态势分析
+            <div class="roles">角色: 终端DLP, 网络DLP, 存储DLP</div>
+            <div class="clear"></div>
+            
+            <div class="level2">邮件信息分析
+                <div class="description">与邮件DLP、网络DLP和终端DLP产品对接，从邮件信息分析、文件外发分析、扫描规则分析、敏感资产分布等维度进行统计分析。内置140+张报表，可满足不同用户的日常管理需求</div>
+            </div>
+            
+            <div class="level2">数据态势分析</div>
+            
+            <div class="level2">扫描规则分析</div>
+            
+            <div class="level2">终端资产分析</div>
+            
+            <div class="level2">群体用户分析
+                <div class="description">从群体用户的角度对群体用户进行对比分析</div>
+            </div>
+        </div>
+        
+        <div class="level1">存储数据审计
+            <div class="roles">角色: 存储DLP</div>
+            <div class="clear"></div>
+            
+            <div class="level2">结构化事件报表
+                <div class="level3">结构化事件审计</div>
+                <div class="level3">结构化事件列表</div>
+            </div>
+            
+            <div class="level2">非结构化事件报表
+                <div class="level3">非结构化事件审计</div>
+                <div class="level3">非结构化事件列表</div>
+            </div>
+        </div>
+        
+        <div class="level1">数据交换审计
+            <div class="roles">角色: 安全集中监控与审计系统</div>
+            <div class="clear"></div>
+            
+            <div class="level2">数据交换审计
+                <div class="description">与公司数据交换产品进行对接，从安全事件、异常事件、通道状态、策略信息、FTP传输、HTTP代理、SFTP同步等角度进行审计分析</div>
+            </div>
+            
+            <div class="level2">视频交换审计
+                <div class="description">与公司视频交换产品进行对接，从安全事件、异常事件、通道状态、策略信息、SIP信息、SIP代理、边界系统等角度进行审计分析</div>
+            </div>
+            
+            <div class="level2">跨网传输行为审计
+                <div class="description">对接跨网交换产品，实现跨网传输行为的审计分析</div>
+            </div>
+        </div>
+        
+        <div class="level1">合规检查审计
+            <div class="roles">角色: 合规管理员</div>
+            <div class="clear"></div>
+            
+            <div class="level2">终端检查审计
+                <div class="description">主要对合规检查工具的终端检查结果进行审计</div>
+            </div>
+            
+            <div class="level2">内容检查审计
+                <div class="description">主要对合规检查工具的内容检查结果进行审计分析</div>
+            </div>
+        </div>
+        
+        <div class="level1">云访问安全代理审计
+            <div class="roles">角色: 安全集中监控与审计系统</div>
+            <div class="clear"></div>
+            
+            <div class="level2">云访问日志审计
+                <div class="description">对已经接入的casb系统中的云访问日志进行审计分析</div>
+            </div>
+            
+            <div class="level2">文件操作日志审计
+                <div class="description">对casb中的文件操作日志进行审计分析</div>
+            </div>
+            
+            <div class="level2">威胁事件审计
+                <div class="description">对casb中的威胁事件进行审计分析</div>
+            </div>
+        </div>
+        
+        <div class="level1">数据库行为审计
+            <div class="roles">角色: 数据库安全审计系统</div>
+            <div class="clear"></div>
+            
+            <div class="level2">语句行为审计
+                <div class="description">与数据库审计产品进行对接，对数据库审计产品的语句行为进行审计</div>
+            </div>
+            
+            <div class="level2">会话行为审计
+                <div class="description">与数据库审计产品进行对接，对数据库审计产品的会话行为进行审计</div>
+            </div>
+        </div>
+        
+        <div class="level1">第三方数据审计
+            <div class="roles">角色: 安全集中监控与审计系统</div>
+            <div class="clear"></div>
+            
+            <div class="level2">MDM
+                <div class="description">对第三方上报的MDM数据进行审计</div>
+            </div>
+            
+            <div class="level2">应用支撑审计
+                <div class="description">对第三方上报的应用支撑数据进行审计</div>
+            </div>
+            
+            <div class="level2">移动应用审计
+                <div class="description">对第三方上报的移动应用数据进行审计</div>
+            </div>
+            
+            <div class="level2">服务资源
+                <div class="description">对第三方上报的服务资源数据进行审计</div>
+            </div>
+            
+            <div class="level2">接入/准入网关
+                <div class="description">对第三方上报的接入/准入网关数据进行审计</div>
+            </div>
+            
+            <div class="level2">通用安全设备
+                <div class="description">对第三方上报的通用安全设备数据进行审计</div>
+            </div>
+            
+            <div class="level2">安全事件审计
+                <div class="description">对第三方上报的安全事件数据进行审计</div>
+            </div>
+            
+            <div class="level2">跨网同步信息审计
+                <div class="description">对第三方上报的跨网同步信息进行审计</div>
+            </div>
+            
+            <div class="level2">安全事件分析
+                <div class="description">对第三方上报的安全事件和异常事件进行统计分析</div>
+            </div>
+            
+            <div class="level2">业务监控分析
+                <div class="description">对第三方上报的业务数据进行统计分析</div>
+            </div>
+            
+            <div class="level2">数据上报管理
+                <div class="description">提供部省两级的数据上报接口管理，对于上报公安部失败的数据支持进行二次上报</div>
+            </div>
+        </div>
+        
+        <div class="level1">用户管理
+            <div class="roles">角色: 系统管理员</div>
+            <div class="clear"></div>
+            
+            <div class="level2">基础数据管理
+                <div class="level3">用户与机构管理
+                    <div class="description">产品提供用户增、删、改、查、导入及用户组织机构增、删、改、查等功能</div>
+                </div>
+                
+                <div class="level3">职位管理
+                    <div class="description">产品提供用户职位增、删、改、查、导入功能</div>
+                </div>
+                
+                <div class="level3">部门审批人配置
+                    <div class="description">产品提供委托人及部门审批人配置功能</div>
+                </div>
+                
+                <div class="level3">自定义用户组
+                    <div class="description">产品提供自定义用户组增、删、改、查、导出等功能</div>
+                </div>
+                
+                <div class="level3">团队管理
+                    <div class="description">提供新增、修改、删除、导出团队，可添加团队成员，团队归属资产</div>
+                </div>
+                
+                <div class="level3">用户属性管理
+                    <div class="description">支持用户状态的增删改以及搜索</div>
+                </div>
+            </div>
+            
+            <div class="level2">权限管理
+                <div class="level3">管理员配置
+                    <div class="description">产品提供管理员增、删、改、查、导入、重置密码、解除锁定等功能</div>
+                </div>
+                
+                <div class="level3">角色配置
+                    <div class="description">产品提供管理员角色增、删、改、查等功能</div>
+                </div>
+                
+                <div class="level3">管理员登录限制
+                    <div class="description">产品提供管理员登录限制IP信息增、删、改、查、导入、全局控制开关等功能</div>
+                </div>
+                
+                <div class="level3">静态脱敏免审
+                    <div class="description">静态脱敏免审对应角色-权限管理</div>
+                </div>
+            </div>
+            
+            <div class="level2">用户同步管理
+                <div class="level3">用户同步
+                    <div class="description">产品提供用户同步数据源信息增、删、改、查、LDAP数据信息对接、同步配置等功能</div>
+                </div>
+                
+                <div class="level3">用户推送
+                    <div class="description">产品提供同步的用户信息推送的各子系统的功能</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="level1">系统管理
+            <div class="roles">角色: 系统管理员, 安全运维管理员</div>
+            <div class="clear"></div>
+            
+            <div class="level2">运维管理
+                <div class="level3">管理员审计
+                    <div class="description">产品提供管理员在平台的操作日志</div>
+                </div>
+                
+                <div class="level3
