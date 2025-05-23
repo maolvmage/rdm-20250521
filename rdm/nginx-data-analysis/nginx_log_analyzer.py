@@ -14,9 +14,9 @@ import pandas as pd
 
 # 固定配置
 LOG_DIR = os.path.join(os.path.dirname(__file__), 'logs')  # 日志目录
-OUTPUT_FILE = os.path.join(os.path.dirname(__file__), '员工访问统计.xlsx')  # 输出文件
+OUTPUT_FILE = os.path.join(os.path.dirname(__file__), '员工访问统计20250523.xlsx')  # 输出文件
 EMPLOYEE_FILE = os.path.join(os.path.dirname(__file__), 'IP信息.xlsx')  # 员工信息文件
-START_TIME = '2025-05-01 00:00:00'  # 开始时间
+START_TIME = '2025-05-19 00:00:00'  # 开始时间
 END_TIME = '2025-05-31 23:59:59'  # 结束时间
 
 def parse_nginx_log(log_file):
