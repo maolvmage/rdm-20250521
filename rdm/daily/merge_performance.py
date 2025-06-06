@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-
+# 统计研发中心所有人员年度绩效
 # 定义Excel文件夹路径
 excel_folder = r"E:\workspace\python\rdm-202505\rdm-20250521\rdm\daily\excel"
 

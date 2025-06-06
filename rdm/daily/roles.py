@@ -1,6 +1,8 @@
 import pandas as pd
 import re
 
+# 处理产品中admin角色权限的脚本
+
 def excel_to_xmind_markdown(excel_path, output_md_path):
     # 读取Excel文件
     df = pd.read_excel(excel_path)

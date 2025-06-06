@@ -2,6 +2,7 @@ import pandas as pd
 from datetime import datetime
 from xlsxwriter import Workbook
 
+# redmine问题分析脚本
 def analyze_issue_tags_by_project(file_path):
     # 数据读取与清洗
     df = pd.read_csv(file_path)
