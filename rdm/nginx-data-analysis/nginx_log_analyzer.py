@@ -9,15 +9,18 @@ nginx日志分析工具
 
 import re
 import os
-from datetime import datetime
+import datetime  # 新增datetime模块
+from datetime import datetime  # 修正导入方式
 import pandas as pd
 
 # 固定配置
 LOG_DIR = os.path.join(os.path.dirname(__file__), 'logs')  # 日志目录
-OUTPUT_FILE = os.path.join(os.path.dirname(__file__), '员工访问统计20250606.xlsx')  # 输出文件
+# 生成当天日期字符串
+current_date = datetime.now().strftime("%Y%m%d")  # 修正调用方式
+OUTPUT_FILE = os.path.join(os.path.dirname(__file__), f'员工访问统计{current_date}.xlsx')
 EMPLOYEE_FILE = os.path.join(os.path.dirname(__file__), 'IP信息.xlsx')  # 员工信息文件
-START_TIME = '2025-06-01 00:00:00'  # 开始时间
-END_TIME = '2025-06-07 00:00:00'  # 结束时间
+START_TIME = '2025-06-09 00:00:00'  # 开始时间
+END_TIME = '2025-06-14 00:00:00'  # 结束时间
 
 def parse_nginx_log(log_file):
     """

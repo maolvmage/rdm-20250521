@@ -8,9 +8,9 @@ pyautogui.PAUSE = 0.5      # 每个动作间隔0.5秒（非强制等待）[2](@r
 try:
     while True:
         # 向右移动100像素（持续0.3秒模拟自然移动）
-        pyautogui.moveRel(100, 0, duration=0.3)  # 网页6类似方案改进版[6,9](@ref)
+        pyautogui.moveRel(500, 0, duration=0.3)  # 网页6类似方案改进版[6,9](@ref)
         # 向左移动100像素（回到原位）
-        pyautogui.moveRel(-100, 0, duration=0.3)
+        pyautogui.moveRel(-500, 0, duration=0.3)
         
         # 计时器（精确等待剩余时间）
         start_time = time.time()
