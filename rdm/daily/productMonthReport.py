@@ -15,8 +15,6 @@ Excel文件需包含以下列：
 - 项目编号
 - 项目阶段
 
-作者：AI Assistant
-日期：2025-07-02
 """
 
 import pandas as pd
@@ -211,7 +209,7 @@ def export_to_excel(project_stats, output_path="项目问题统计结果.xlsx"):
 def main():
     """主函数"""
     # Excel文件路径
-    excel_path = "rdm/daily/6月问题.xlsx"
+    excel_path = "rdm/daily/7月.xlsx"
 
     # 检查文件是否存在
     if not os.path.exists(excel_path):
