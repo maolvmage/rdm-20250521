@@ -538,6 +538,20 @@ dev = ["pre-commit (==4.2.0)", "pytest (==8.3.5)", "setuptools_scm (==8.3.1)", "
 docs = ["furo (==2024.8.6)", "pyenchant (==3.2.2)", "sphinx (==8.2.3)", "sphinx-autobuild (==2024.10.3)", "sphinx-copybutton (==0.5.2)", "sphinx_tabs (==3.4.7)", "sphinxcontrib-spelling (==8.0.1)"]
 
 [[package]]
+name = "schedule"
+version = "1.2.2"
+description = "Job scheduling for humans."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "schedule-1.2.2-py3-none-any.whl", hash = "sha256:5bef4a2a0183abf44046ae0d164cadcac21b1db011bdd8102e4a0c1e91e06a7d"},
+    {file = "schedule-1.2.2.tar.gz", hash = "sha256:15fe9c75fe5fd9b9627f3f19cc0ef1420508f9f9a46f45cd0769ef75ede5f0b7"},
+]
+
+[package.extras]
+timezone = ["pytz"]
+
+[[package]]
 name = "six"
 version = "1.17.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -562,4 +576,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9.0,<4.0"
-content-hash = "60170fd8df2a84657307389386c152f77a1d3c1062044d0a03fd1ad3ceff40a5"
+content-hash = "b99a51f4e21adc4fb968cddbd38566cc1c23bcc3de5ab85c1bc7465096d3d315"
