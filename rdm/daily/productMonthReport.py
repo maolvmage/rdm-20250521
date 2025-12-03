@@ -209,7 +209,7 @@ def export_to_excel(project_stats, output_path="项目问题统计结果.xlsx"):
 def main():
     """主函数"""
     # Excel文件路径
-    excel_path = "rdm/daily/10月.xlsx"
+    excel_path = "rdm/daily/11月.xlsx"
 
     # 检查文件是否存在
     if not os.path.exists(excel_path):
